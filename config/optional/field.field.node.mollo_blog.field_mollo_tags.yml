@@ -1,0 +1,29 @@
+uuid: 8fa69831-293d-4a58-a78c-bb35ba53bf51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mollo_tags
+    - node.type.mollo_news
+    - taxonomy.vocabulary.mollo_tags
+id: node.mollo_news.field_mollo_tags
+field_name: field_mollo_tags
+entity_type: node
+bundle: mollo_news
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      mollo_tags: mollo_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

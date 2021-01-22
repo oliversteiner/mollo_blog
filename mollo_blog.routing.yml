@@ -1,0 +1,9 @@
+#
+# View News
+#
+mollo_news.list:
+  path: '/admin/news/list'
+  defaults:
+    _title: 'News'
+  requirements:
+    _permission: 'administer content'

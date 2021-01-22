@@ -1,0 +1,22 @@
+uuid: 5a2e06c0-0e15-4b98-838d-95fbfbe7d651
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: mollo_news
+label: 'Mollo News'
+type: 'canonical_entities:node'
+pattern: '/news/[node:title]'
+selection_criteria:
+  8170405e-3e6c-4f73-8046-3935542bdbab:
+    id: node_type
+    bundles:
+      mollo_news: mollo_news
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 8170405e-3e6c-4f73-8046-3935542bdbab
+selection_logic: and
+weight: -5
+relationships: {  }

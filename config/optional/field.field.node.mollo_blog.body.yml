@@ -1,0 +1,23 @@
+uuid: 4920c942-b4bb-4732-889f-f5b4b68a54b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.mollo_news
+  module:
+    - text
+id: node.mollo_news.body
+field_name: body
+entity_type: node
+bundle: mollo_news
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

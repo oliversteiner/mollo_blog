@@ -1,0 +1,13 @@
+name: 'News'
+type: module
+description: 'News Module for Mollo Events'
+core_version_requirement: ^8 || ^9
+package: 'Mollo'
+dependencies:
+  - drupal:node
+  - field_group
+  - auto_entitylabel
+  - views_admintools
+  - pathauto
+  - mollo_utils
+  - content_translation

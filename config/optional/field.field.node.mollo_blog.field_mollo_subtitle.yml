@@ -1,0 +1,29 @@
+uuid: e32c4638-1554-409f-9019-7b3b49ec7f07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mollo_subtitle
+    - node.type.mollo_news
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    plain_text: plain_text
+    full_html: full_html
+    text: '0'
+    html_email: '0'
+    json: '0'
+id: node.mollo_news.field_mollo_subtitle
+field_name: field_mollo_subtitle
+entity_type: node
+bundle: mollo_news
+label: Teaser
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,17 @@
+uuid: ab50ed40-599c-4947-a071-14562a95a2af
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: News
+type: mollo_news
+description: Mollo
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

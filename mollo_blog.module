@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Contains mollo_news.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\mollo_utils\Utility\ViewFilter;
+
+/**
+ * Implements hook_help().
+ */
+function mollo_news_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the mollo_news module.
+    case 'help.page.mollo_news':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Artist Module for Mollo Events') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mollo_news_theme() {
+  return [
+    'mollo_news' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+function mollo_news_form_alter(&$form, &$form_state, $form_id)
+{
+
+  // Show Menu with Names on List Filter
+  if ($form['#id'] === 'views-exposed-form-mollo-news-admin-list' ||
+    $form['#id'] === 'views-exposed-form-mollo-news-visitor-list'
+  ) {
+    $form = ViewFilter::filter_mollo_event($form);
+  }
+}
+

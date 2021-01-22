@@ -1,0 +1,9 @@
+mollo_news.main:
+  css:
+    theme:
+      assets/css/mollo_news.css: {}
+  js:
+    assets/js/mollo_news.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

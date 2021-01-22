@@ -1,0 +1,23 @@
+uuid: 892c3d94-dc97-4f5f-a37a-547b4eccaf52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mollo_internal
+    - node.type.mollo_news
+id: node.mollo_news.field_mollo_internal
+field_name: field_mollo_internal
+entity_type: node
+bundle: mollo_news
+label: Internal
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

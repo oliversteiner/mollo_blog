@@ -1,0 +1,45 @@
+uuid: 62fb429b-a96b-4038-80ed-ac7f602cc6c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.mollo_news.body
+    - field.field.node.mollo_news.field_mollo_event
+    - field.field.node.mollo_news.field_mollo_galleries
+    - field.field.node.mollo_news.field_mollo_internal
+    - field.field.node.mollo_news.field_mollo_media
+    - field.field.node.mollo_news.field_mollo_subtitle
+    - field.field.node.mollo_news.field_mollo_tags
+    - field.field.node.mollo_news.field_mollo_title_image
+    - node.type.mollo_news
+  module:
+    - text
+    - user
+id: node.mollo_news.teaser
+targetEntityType: node
+bundle: mollo_news
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_mollo_event: true
+  field_mollo_galleries: true
+  field_mollo_internal: true
+  field_mollo_media: true
+  field_mollo_subtitle: true
+  field_mollo_tags: true
+  field_mollo_title_image: true
+  langcode: true

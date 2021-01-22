@@ -1,0 +1,11 @@
+uuid: 6385f528-76c5-404a-aa5e-e42b09ef9dff
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.mollo_news
+id: node.mollo_news
+target_entity_type_id: node
+target_bundle: mollo_news
+default_langcode: site_default
+language_alterable: false

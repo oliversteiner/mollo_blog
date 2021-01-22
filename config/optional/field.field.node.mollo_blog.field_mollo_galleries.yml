@@ -1,0 +1,28 @@
+uuid: e755ae62-8f4f-4fb0-86ea-c8bd23ea89e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mollo_galleries
+    - node.type.mollo_news
+    - node.type.unig_project
+id: node.mollo_news.field_mollo_galleries
+field_name: field_mollo_galleries
+entity_type: node
+bundle: mollo_news
+label: Galleries
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      unig_project: unig_project
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

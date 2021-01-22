@@ -1,0 +1,20 @@
+{
+  "name": "drupal/mollo_news",
+  "type": "drupal-module",
+  "license": "GPL-3.0+",
+  "description": "Drupal Module Press for Mollo Events",
+  "keywords": [
+    "drupal",
+    "mollo",
+    "press",
+    "mollo",
+    "events"
+  ],
+  "homepage": "https://github.com/oliversteiner/mollo_news",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://github.com/oliversteiner/mollo_news/issues",
+    "source": "https://github.com/oliversteiner/mollo_news"
+  },
+  "require": {}
+}
