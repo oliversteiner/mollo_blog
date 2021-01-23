@@ -1,0 +1,94 @@
+uuid: 5590df29-a8f4-4d5e-8309-ac3873588603
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mollo_blog.body
+    - field.field.node.mollo_blog.field_mollo_galleries
+    - field.field.node.mollo_blog.field_mollo_internal
+    - field.field.node.mollo_blog.field_mollo_media
+    - field.field.node.mollo_blog.field_mollo_subtitle
+    - field.field.node.mollo_blog.field_mollo_tags
+    - field.field.node.mollo_blog.field_mollo_title_image
+    - field.field.node.mollo_blog.field_mollo_videos
+    - image.style.large
+    - node.type.mollo_blog
+  module:
+    - light_slide_gallery
+    - media
+    - text
+    - unig
+    - user
+id: node.mollo_blog.default
+targetEntityType: node
+bundle: mollo_blog
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_mollo_galleries:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: unig_project_teaser
+    region: content
+  field_mollo_media:
+    weight: 4
+    label: hidden
+    settings:
+      image_style_default: medium
+      image_style_thumbnail: unig_thumbnail
+      image_style_fullscreen: unig_hd
+      gallery_style: grid
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    type: light_slide_gallery_media_formatter
+    region: content
+  field_mollo_subtitle:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_mollo_tags:
+    weight: 7
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_mollo_title_image:
+    weight: 1
+    label: above
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+  field_mollo_videos:
+    type: entity_reference_entity_view
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_mollo_internal: true
+  langcode: true

@@ -1,12 +1,11 @@
 (function($, Drupal, drupalSettings) {
-  Drupal.behaviors.molloArtist = {
+  Drupal.behaviors.molloBlog = {
     attach(context, settings) {
-      console.log("Mollo Artist");
+      console.log('Mollo Blog');
 
-        $('#mollo-news', context)
-          .once('mollo-news')
-          .each(() => {});
-
+      $('#mollo-blog', context)
+        .once('mollo-blog')
+        .each(() => {});
     },
   };
 })(jQuery, Drupal, drupalSettings);

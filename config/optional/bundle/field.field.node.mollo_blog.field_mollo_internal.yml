@@ -1,18 +1,18 @@
-uuid: 892c3d94-dc97-4f5f-a37a-547b4eccaf52
+uuid: 12e15609-6b35-4ea1-a67c-e8d63cebc902
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_mollo_internal
-    - node.type.mollo_news
-id: node.mollo_news.field_mollo_internal
+    - node.type.mollo_blog
+id: node.mollo_blog.field_mollo_internal
 field_name: field_mollo_internal
 entity_type: node
-bundle: mollo_news
+bundle: mollo_blog
 label: Internal
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

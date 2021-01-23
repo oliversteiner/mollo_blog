@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains mollo_news.module.
+ * Contains mollo_blog.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -11,13 +11,13 @@ use Drupal\mollo_utils\Utility\ViewFilter;
 /**
  * Implements hook_help().
  */
-function mollo_news_help($route_name, RouteMatchInterface $route_match) {
+function mollo_blog_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the mollo_news module.
-    case 'help.page.mollo_news':
+    // Main module help for the mollo_blog module.
+    case 'help.page.mollo_blog':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Artist Module for Mollo Events') . '</p>';
+      $output .= '<p>' . t('Blog Module for Mollo Business') . '</p>';
       return $output;
 
     default:
@@ -27,21 +27,14 @@ function mollo_news_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function mollo_news_theme() {
+function mollo_blog_theme() {
   return [
-    'mollo_news' => [
+    'mollo_blog' => [
       'render element' => 'children',
     ],
   ];
 }
-function mollo_news_form_alter(&$form, &$form_state, $form_id)
+function mollo_blog_form_alter(&$form, &$form_state, $form_id)
 {
-
-  // Show Menu with Names on List Filter
-  if ($form['#id'] === 'views-exposed-form-mollo-news-admin-list' ||
-    $form['#id'] === 'views-exposed-form-mollo-news-visitor-list'
-  ) {
-    $form = ViewFilter::filter_mollo_event($form);
-  }
 }
 

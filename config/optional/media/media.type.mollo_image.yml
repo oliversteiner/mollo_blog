@@ -1,0 +1,17 @@
+uuid: 5250f4c2-1692-400e-bf3b-2aa06bf5c8ea
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: hX2btyw7z1SPoofTO-DMq4SxMQGdGbyZLgEaCsq4AH4
+id: mollo_image
+label: 'Mollo Image'
+description: Mollo
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map:
+  name: name
+  mimetype: field_media_image

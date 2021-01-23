@@ -1,24 +1,24 @@
-uuid: 62fb429b-a96b-4038-80ed-ac7f602cc6c6
+uuid: 7a83fcde-194a-4f81-8647-c1834877f678
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.mollo_news.body
-    - field.field.node.mollo_news.field_mollo_event
-    - field.field.node.mollo_news.field_mollo_galleries
-    - field.field.node.mollo_news.field_mollo_internal
-    - field.field.node.mollo_news.field_mollo_media
-    - field.field.node.mollo_news.field_mollo_subtitle
-    - field.field.node.mollo_news.field_mollo_tags
-    - field.field.node.mollo_news.field_mollo_title_image
-    - node.type.mollo_news
+    - field.field.node.mollo_blog.body
+    - field.field.node.mollo_blog.field_mollo_galleries
+    - field.field.node.mollo_blog.field_mollo_internal
+    - field.field.node.mollo_blog.field_mollo_media
+    - field.field.node.mollo_blog.field_mollo_subtitle
+    - field.field.node.mollo_blog.field_mollo_tags
+    - field.field.node.mollo_blog.field_mollo_title_image
+    - field.field.node.mollo_blog.field_mollo_videos
+    - node.type.mollo_blog
   module:
     - text
     - user
-id: node.mollo_news.teaser
+id: node.mollo_blog.teaser
 targetEntityType: node
-bundle: mollo_news
+bundle: mollo_blog
 mode: teaser
 content:
   body:
@@ -35,11 +35,11 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_mollo_event: true
   field_mollo_galleries: true
   field_mollo_internal: true
   field_mollo_media: true
   field_mollo_subtitle: true
   field_mollo_tags: true
   field_mollo_title_image: true
+  field_mollo_videos: true
   langcode: true

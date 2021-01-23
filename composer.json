@@ -1,5 +1,5 @@
 {
-  "name": "drupal/mollo_news",
+  "name": "drupal/mollo_blog",
   "type": "drupal-module",
   "license": "GPL-3.0+",
   "description": "Drupal Module Press for Mollo Events",
@@ -10,11 +10,11 @@
     "mollo",
     "events"
   ],
-  "homepage": "https://github.com/oliversteiner/mollo_news",
+  "homepage": "https://github.com/oliversteiner/mollo_blog",
   "minimum-stability": "dev",
   "support": {
-    "issues": "https://github.com/oliversteiner/mollo_news/issues",
-    "source": "https://github.com/oliversteiner/mollo_news"
+    "issues": "https://github.com/oliversteiner/mollo_blog/issues",
+    "source": "https://github.com/oliversteiner/mollo_blog"
   },
   "require": {}
 }

@@ -1,20 +1,19 @@
-uuid: 4cca75c9-ab4a-4ede-879b-cd48ded52ec1
+uuid: d43e1501-2ee8-4551-afec-950f8b626e3f
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_mollo_media
-    - media.type.mollo_audio
     - media.type.mollo_image
     - media.type.mollo_video
     - media.type.mollo_video_remote
-    - node.type.mollo_news
-id: node.mollo_news.field_mollo_media
+    - node.type.mollo_blog
+id: node.mollo_blog.field_mollo_media
 field_name: field_mollo_media
 entity_type: node
-bundle: mollo_news
+bundle: mollo_blog
 label: Media
-description: 'Images, Video and Audio'
+description: ''
 required: false
 translatable: true
 default_value: {  }
@@ -23,12 +22,12 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      mollo_audio: mollo_audio
       mollo_image: mollo_image
       mollo_video: mollo_video
       mollo_video_remote: mollo_video_remote
     sort:
       field: _none
+      direction: ASC
     auto_create: true
     auto_create_bundle: mollo_image
 field_type: entity_reference

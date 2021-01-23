@@ -1,9 +1,9 @@
 #
-# View News
+# View Blog
 #
-mollo_news.list:
-  path: '/admin/news/list'
+mollo_blog.list:
+  path: '/admin/blog/list'
   defaults:
-    _title: 'News'
+    _title: 'Blog'
   requirements:
     _permission: 'administer content'

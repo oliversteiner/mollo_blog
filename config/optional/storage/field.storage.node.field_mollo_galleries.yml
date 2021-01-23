@@ -1,0 +1,21 @@
+uuid: f8354d5e-7c06-4842-9540-f564474deb1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: IUhzoTajC2-91JLmcilg1QwzlfHOY4ofc4R4KfeigRQ
+id: node.field_mollo_galleries
+field_name: field_mollo_galleries
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

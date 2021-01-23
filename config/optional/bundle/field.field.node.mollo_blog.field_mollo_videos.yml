@@ -1,0 +1,29 @@
+uuid: fb872a19-7eaf-4258-93a8-bfd8f01b5e89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mollo_videos
+    - media.type.mollo_video
+    - node.type.mollo_blog
+id: node.mollo_blog.field_mollo_videos
+field_name: field_mollo_videos
+entity_type: node
+bundle: mollo_blog
+label: Videos
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      mollo_video: mollo_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

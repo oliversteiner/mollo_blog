@@ -1,0 +1,20 @@
+uuid: 27794e55-d7d0-4835-93be-1c0d01a57a24
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: uLD1lu9Y3txvfF87CI3fkh7OuIS1C7-vxkWpIFY9oQw
+id: node.field_mollo_internal
+field_name: field_mollo_internal
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

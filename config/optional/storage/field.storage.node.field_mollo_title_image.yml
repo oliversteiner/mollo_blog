@@ -1,0 +1,22 @@
+uuid: 8281b044-b60e-48ad-914f-1858ee377885
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+_core:
+  default_config_hash: oCsKfZpj7wWCYUhth-AJ_PWJ2m4t7lMgwv_XRPuw9Ss
+id: node.field_mollo_title_image
+field_name: field_mollo_title_image
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

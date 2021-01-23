@@ -1,4 +1,4 @@
-uuid: ab50ed40-599c-4947-a071-14562a95a2af
+uuid: ddb4a40a-b1d3-4472-af72-b9253d6ba30a
 langcode: en
 status: true
 dependencies:
@@ -8,10 +8,10 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: News
-type: mollo_news
-description: Mollo
+name: Blog
+type: mollo_blog
+description: 'Mollo Blog'
 help: ''
-new_revision: false
-preview_mode: 1
+new_revision: true
+preview_mode: 0
 display_submitted: false

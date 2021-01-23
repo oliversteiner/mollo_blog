@@ -1,0 +1,21 @@
+uuid: ca9afcd5-e701-4058-b45d-284c480143fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: lCyR4R4K5RV6lrA0pYespQUb4cwm4YZDAXsTLIfk1Wo
+id: node.field_mollo_subtitle
+field_name: field_mollo_subtitle
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

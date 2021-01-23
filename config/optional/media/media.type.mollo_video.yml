@@ -1,0 +1,16 @@
+uuid: b9c3c4c8-e6e5-45bf-a323-32b8503c9aae
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: 9Sr_3QZlsyM-Nx8CdvyFPreLz-jjOdHr33M8jlxIvH4
+id: mollo_video
+label: 'Mollo Video'
+description: Mollo
+source: video_file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_audio_file
+field_map:
+  name: name

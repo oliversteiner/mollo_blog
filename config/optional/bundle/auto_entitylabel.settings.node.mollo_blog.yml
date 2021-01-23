@@ -1,0 +1,9 @@
+status: 0
+pattern: '[node:title]'
+escape: true
+preserve_titles: false
+save: 0
+chunk: '50'
+dependencies:
+  config:
+    - node.type.mollo_blog

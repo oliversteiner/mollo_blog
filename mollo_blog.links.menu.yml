@@ -2,8 +2,8 @@
 #
 # Content > News
 #
-mollo_news.main:
-  title: 'News'
-  description: 'List of news Articles'
-  route_name: mollo_news.list
+mollo_blog.main:
+  title: 'Blog'
+  description: 'List of Blog Articles'
+  route_name: mollo_blog.list
   parent: 'system.admin_content'

@@ -1,0 +1,24 @@
+uuid: f3067fdf-664b-4b80-8127-9b04cc2b28f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: ZgHbSTKIKqtQY-uXgAz9SQT3zSWf_dP5zmeNGCrAYcI
+id: mollo_blog
+label: 'Mollo Blog'
+type: 'canonical_entities:node'
+pattern: '/blog/[node:title]'
+selection_criteria:
+  821144a4-2183-4115-879e-e123b9522089:
+    id: node_type
+    bundles:
+      mollo_blog: mollo_blog
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 821144a4-2183-4115-879e-e123b9522089
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,15 +1,15 @@
-uuid: 086ca065-cc52-4549-8857-65576e1b61bb
+uuid: ac8d46ef-2942-42b0-9ac1-1b7c7fa75199
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_mollo_title_image
     - media.type.mollo_image
-    - node.type.mollo_news
-id: node.mollo_news.field_mollo_title_image
+    - node.type.mollo_blog
+id: node.mollo_blog.field_mollo_title_image
 field_name: field_mollo_title_image
 entity_type: node
-bundle: mollo_news
+bundle: mollo_blog
 label: 'Title Image'
 description: ''
 required: false
@@ -23,6 +23,7 @@ settings:
       mollo_image: mollo_image
     sort:
       field: _none
-    auto_create: true
+      direction: ASC
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

@@ -1,0 +1,16 @@
+uuid: 69c9df69-f124-463a-9eaa-12cba404a206
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: 66tViZEM2Gzrd6Dp91klP0ssG3TFV3lmiiq4qRExXP8
+id: mollo_audio
+label: 'Mollo Audio'
+description: Mollo
+source: audio_file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_audio_file
+field_map:
+  name: name
