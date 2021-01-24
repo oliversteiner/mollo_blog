@@ -2,7 +2,7 @@
   "name": "drupal/mollo_blog",
   "type": "drupal-module",
   "license": "GPL-3.0+",
-  "description": "Drupal Module Press for Mollo Events",
+  "description": "Drupal Blog Module for Mollo Business",
   "keywords": [
     "drupal",
     "mollo",

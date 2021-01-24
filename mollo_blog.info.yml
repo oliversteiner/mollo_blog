@@ -1,8 +1,10 @@
 name: 'Blog'
 type: module
-description: 'Blog Module for Mollo Events'
+description: 'Blog Module for Mollo Business'
 core_version_requirement: ^8 || ^9
 package: 'Mollo'
+project: mollo_blog
+version: 9.x-1.0
 dependencies:
   - drupal:node
   - field_group
