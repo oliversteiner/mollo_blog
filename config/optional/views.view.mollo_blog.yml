@@ -462,7 +462,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: admin/blog/list
+      path: admin/blog
       menu:
         type: normal
         title: 'Mollo Blog'

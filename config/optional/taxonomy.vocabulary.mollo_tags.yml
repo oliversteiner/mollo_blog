@@ -1,0 +1,10 @@
+uuid: 3809c01c-8c83-4ce7-8c2d-1cb8bac86f9e
+langcode: und
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: zeGq2Ml8Xx8SvH8xU-K1N_94JUQphCbB0ItecQMml68
+name: 'Mollo Tags'
+vid: mollo_tags
+description: Mollo
+weight: 0
