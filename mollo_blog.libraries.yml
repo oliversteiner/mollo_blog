@@ -1,4 +1,4 @@
-mollo_blog.main:
+blog.main:
   css:
     theme:
       assets/css/mollo_blog.css: {}
