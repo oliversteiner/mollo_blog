@@ -1,0 +1,10 @@
+name: Mollo Blog GraphQL
+type: module
+description: 'Blog GraphQL For Mollo Creator'
+package: Mollo
+core: 8.x
+dependencies:
+  - graphql:graphql
+  - node:node
+  - mollo_creator_drupal
+core_version_requirement: ^8 || ^9
