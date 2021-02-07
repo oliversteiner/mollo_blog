@@ -6,16 +6,17 @@ use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\graphql\Plugin\GraphQL\DataProducer\DataProducerPluginBase;
+use Drupal\mollo_creator_drupal_graphql\Plugin\GraphQL\Wrappers\QueryConnection;
 use GraphQL\Error\UserError;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @DataProducer(
- *   id = "query_blog_posts",
- *   name = @Translation("Load blog_posts"),
- *   description = @Translation("Loads a list of blog_posts."),
+ *   id = "query_mollo_blog",
+ *   name = @Translation("Load Mollo Blog"),
+ *   description = @Translation("Loads a list of Mollo Blog."),
  *   produces = @ContextDefinition("any",
- *     label = @Translation("BlogPost connection")
+ *     label = @Translation("Mollo Blog connection")
  *   ),
  *   consumes = {
  *     "offset" = @ContextDefinition("integer",
@@ -29,7 +30,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   }
  * )
  */
-class QueryBlogPosts extends DataProducerPluginBase implements ContainerFactoryPluginInterface {
+class MolloBlogQuery extends DataProducerPluginBase implements ContainerFactoryPluginInterface {
 
   public const MAX_LIMIT = 100;
 
@@ -53,7 +54,7 @@ class QueryBlogPosts extends DataProducerPluginBase implements ContainerFactoryP
   }
 
   /**
-   * BlogPosts constructor.
+   * MolloBlogs constructor.
    *
    * @param array $configuration
    *   The plugin configuration.
@@ -94,7 +95,7 @@ class QueryBlogPosts extends DataProducerPluginBase implements ContainerFactoryP
       ->currentRevision()
       ->accessCheck();
 
-    $query->condition($entityType->getKey('bundle'), 'blog_post');
+    $query->condition($entityType->getKey('bundle'), 'mollo_blog');
     $query->range($offset, $limit);
 
     $metadata->addCacheTags($entityType->getListCacheTags());

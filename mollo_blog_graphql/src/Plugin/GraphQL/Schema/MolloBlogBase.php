@@ -5,17 +5,17 @@ namespace Drupal\mollo_blog_graphql\Plugin\GraphQL\Schema;
 use Drupal\graphql\GraphQL\ResolverBuilder;
 use Drupal\graphql\GraphQL\ResolverRegistry;
 use Drupal\graphql\Plugin\GraphQL\Schema\ComposableSchema;
-use Drupal\mollo_blog_graphql\Plugin\GraphQL\Wrappers\QueryConnection;
+use Drupal\mollo_creator_graphql\Plugin\GraphQL\Wrapper\QueryConnection;
 
 /**
  * @Schema(
- *   id = "blog_base",
- *   name = "BlogPost Base",
- *   extensions = "blog_post",
- *   description = "BlogPost - Lists",
+ *   id = "mollo_blog_base",
+ *   name = "Mollo Blog Base",
+ *   extensions = "mollo_blog",
+ *   description = "MolloBlog - Lists",
  * )
  */
-class BlogPostBase extends ComposableSchema {
+class MolloBlogBase extends ComposableSchema {
   /**
    * {@inheritdoc}
    */
@@ -24,10 +24,10 @@ class BlogPostBase extends ComposableSchema {
     $registry = new ResolverRegistry();
 
     $this->addQueryFields($registry, $builder);
-    $this->addBlogPostFields($registry, $builder);
+    $this->addMolloBlogFields($registry, $builder);
 
     // Re-usable connection type fields.
-    $this->addConnectionFields('BlogPostConnection', $registry, $builder);
+    $this->addConnectionFields('MolloBlogConnection', $registry, $builder);
 
     return $registry;
   }
@@ -36,13 +36,13 @@ class BlogPostBase extends ComposableSchema {
    * @param \Drupal\graphql\GraphQL\ResolverRegistry $registry
    * @param \Drupal\graphql\GraphQL\ResolverBuilder $builder
    */
-  protected function addBlogPostFields(ResolverRegistry $registry, ResolverBuilder $builder) {
-    $registry->addFieldResolver('BlogPost', 'id',
+  protected function addMolloBlogFields(ResolverRegistry $registry, ResolverBuilder $builder) {
+    $registry->addFieldResolver('MolloBlog', 'id',
       $builder->produce('entity_id')
         ->map('entity', $builder->fromParent())
     );
 
-    $registry->addFieldResolver('BlogPost', 'title',
+    $registry->addFieldResolver('MolloBlog', 'title',
       $builder->compose(
         $builder->produce('entity_label')
           ->map('entity', $builder->fromParent()),
@@ -51,7 +51,7 @@ class BlogPostBase extends ComposableSchema {
       )
     );
 
-    $registry->addFieldResolver('BlogPost', 'author',
+    $registry->addFieldResolver('MolloBlog', 'author',
       $builder->compose(
         $builder->produce('entity_owner')
           ->map('entity', $builder->fromParent()),
@@ -66,15 +66,15 @@ class BlogPostBase extends ComposableSchema {
    * @param \Drupal\graphql\GraphQL\ResolverBuilder $builder
    */
   protected function addQueryFields(ResolverRegistry $registry, ResolverBuilder $builder) {
-    $registry->addFieldResolver('Query', 'blog_post',
+    $registry->addFieldResolver('Query', 'mollo_blog',
       $builder->produce('entity_load')
         ->map('type', $builder->fromValue('node'))
-        ->map('bundles', $builder->fromValue(['blog_post']))
+        ->map('bundles', $builder->fromValue(['mollo_blog']))
         ->map('id', $builder->fromArgument('id'))
     );
 
-    $registry->addFieldResolver('Query', 'blog_posts',
-      $builder->produce('query_blog_posts')
+    $registry->addFieldResolver('Query', 'mollo_blog',
+      $builder->produce('query_mollo_blog')
         ->map('offset', $builder->fromArgument('offset'))
         ->map('limit', $builder->fromArgument('limit'))
     );

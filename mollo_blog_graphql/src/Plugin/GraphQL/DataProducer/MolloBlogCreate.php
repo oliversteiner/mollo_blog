@@ -5,28 +5,28 @@ namespace Drupal\mollo_blog_graphql\Plugin\GraphQL\DataProducer;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\graphql\Plugin\GraphQL\DataProducer\DataProducerPluginBase;
-use Drupal\mollo_blog_graphql\Plugin\GraphQL\Response\BlogPostResponse;
+use Drupal\mollo_blog_graphql\Plugin\GraphQL\Response\MolloBlogResponse;
 use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Creates a new blog_post entity.
+ * Creates a new entity.
  *
  * @DataProducer(
- *   id = "create_blog_post",
- *   name = @Translation("Create BlogPost"),
- *   description = @Translation("Creates a new blog_post."),
+ *   id = "create_mollo_blog",
+ *   name = @Translation("Create Mollo Blog"),
+ *   description = @Translation("Creates a new Mollo Blog."),
  *   produces = @ContextDefinition("any",
- *     label = @Translation("BlogPost (Mollo)")
+ *     label = @Translation("MolloBlog (Mollo)")
  *   ),
  *   consumes = {
  *     "data" = @ContextDefinition("any",
- *       label = @Translation("BlogPost data")
+ *       label = @Translation("MolloBlog data")
  *     )
  *   }
  * )
  */
-class CreateBlogPost extends DataProducerPluginBase implements ContainerFactoryPluginInterface {
+class MolloBlogCreate extends DataProducerPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * The current user.
@@ -48,7 +48,7 @@ class CreateBlogPost extends DataProducerPluginBase implements ContainerFactoryP
   }
 
   /**
-   * CreateBlogPost constructor.
+   * CreateMolloBlog constructor.
    *
    * @param array $configuration
    *   A configuration array containing information about the plugin instance.
@@ -65,30 +65,30 @@ class CreateBlogPost extends DataProducerPluginBase implements ContainerFactoryP
   }
 
   /**
-   * Creates an blog_post.
+   * Creates an mollo_blog.
    *
    * @param array $data
-   *   The submitted values for the blog_post.
+   *   The submitted values for the mollo_blog.
    *
-   *   The newly created blog_post.
+   *   The newly created mollo_blog.
    *
    * @throws \Exception
    */
-  public function resolve(array $data): BlogPostResponse {
-    $response = new BlogPostResponse();
+  public function resolve(array $data): MolloBlogResponse {
+    $response = new MolloBlogResponse();
     if ($this->currentUser->hasPermission("create mollo_blog content")) {
       $values = [
-        'type' => 'blog_post',
+        'type' => 'mollo_blog',
         'title' => $data['title'],
         'body' => $data['description'],
       ];
       $node = Node::create($values);
       $node->save();
-      $response->setBlogPost($node);
+      $response->setMolloBlog($node);
     }
     else {
       $response->addViolation(
-        $this->t('You do not have permissions to create blog posts.')
+        $this->t('You do not have permissions to create Mollo Blog.')
       );
     }
     return $response;

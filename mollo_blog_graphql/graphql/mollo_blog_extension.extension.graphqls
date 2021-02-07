@@ -1,0 +1,9 @@
+extend type Mutation {
+  createMolloBlog(data: MolloBlogInput): MolloBlogResponse
+}
+extend type Query {
+  mollo_blog(
+    offset: Int = 0
+    limit: Int = 10
+  ): MolloBlogConnection!
+}

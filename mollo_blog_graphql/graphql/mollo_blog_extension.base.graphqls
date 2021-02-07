@@ -1,0 +1,30 @@
+
+extend type Query {
+  mollo_blog(
+    offset: Int = 0
+    limit: Int = 10
+  ): MolloBlogConnection!
+}
+
+type MolloBlog {
+  id: Int!
+  title: String!
+  author: String
+}
+
+type MolloBlogConnection {
+  total: Int!
+  items: [MolloBlog!]
+}
+
+
+type MolloBlogResponse implements Response {
+  errors: [Violation]
+  mollo_blog: MolloBlog
+}
+
+
+input MolloBlogInput {
+  title: String!
+  description: String
+}

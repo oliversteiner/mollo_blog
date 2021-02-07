@@ -1,9 +1,0 @@
-extend type Mutation {
-  createBlogPost(data: BlogPostInput): BlogPostResponse
-}
-extend type Query {
-  blog_posts(
-    offset: Int = 0
-    limit: Int = 10
-  ): BlogPostConnection!
-}

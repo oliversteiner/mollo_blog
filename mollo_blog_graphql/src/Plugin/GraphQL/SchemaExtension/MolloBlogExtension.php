@@ -6,18 +6,18 @@ use Drupal\graphql\GraphQL\ResolverBuilder;
 use Drupal\graphql\GraphQL\ResolverRegistryInterface;
 use Drupal\graphql\GraphQL\Response\ResponseInterface;
 use Drupal\graphql\Plugin\GraphQL\SchemaExtension\SdlSchemaExtensionPluginBase;
-use Drupal\mollo_blog_graphql\Plugin\GraphQL\Response\BlogPostResponse;
+use Drupal\mollo_blog_graphql\Plugin\GraphQL\Response\MolloBlogResponse;
 use Exception;
 
 /**
  * @SchemaExtension(
- *   id = "blog_extension",
- *   name = "BlogPost  Extension",
- *   description = "BlogPost Extension for Mutations",
- *   schema = "blog"
+ *   id = "mollo_blog_extension",
+ *   name = "Mollo Blog  Extension",
+ *   description = "Mollo Blog Extension",
+ *   schema = "mollo_blog"
  * )
  */
-class BlogPostExtension extends SdlSchemaExtensionPluginBase {
+class MolloBlogExtension extends SdlSchemaExtensionPluginBase {
 
   /**
    * {@inheritdoc}
@@ -25,50 +25,50 @@ class BlogPostExtension extends SdlSchemaExtensionPluginBase {
   public function registerResolvers(ResolverRegistryInterface $registry) {
     $builder = new ResolverBuilder();
 
-    $registry->addFieldResolver('Query', 'blog_post',
+    $registry->addFieldResolver('Query', 'mollo_blog',
       $builder->produce('entity_load')
         ->map('type', $builder->fromValue('node'))
-        ->map('bundles', $builder->fromValue(['blog_post']))
+        ->map('bundles', $builder->fromValue(['mollo_blog']))
         ->map('id', $builder->fromArgument('id'))
     );
 
-    $registry->addFieldResolver('getBlogPosts', 'items',
-      $builder->callback(function (BlogPostResponse $response) {
+    $registry->addFieldResolver('getMolloBlog', 'items',
+      $builder->callback(function (MolloBlogResponse $response) {
         return $response->getViolations();
       })
     );
 
-    // Create blog_post mutation.
-    $registry->addFieldResolver('Mutation', 'createBlogPost',
-      $builder->produce('create_blog_post')
+    // Create mollo_blog mutation.
+    $registry->addFieldResolver('Mutation', 'createMolloBlog',
+      $builder->produce('create_mollo_blog')
         ->map('data', $builder->fromArgument('data'))
     );
 
-    $registry->addFieldResolver('BlogPostResponse', 'blog_post',
-      $builder->callback(function (BlogPostResponse $response) {
-        return $response->blog_post();
+    $registry->addFieldResolver('MolloBlogResponse', 'mollo_blog',
+      $builder->callback(function (MolloBlogResponse $response) {
+        return $response->mollo_blog();
       })
     );
 
-    $registry->addFieldResolver('BlogPostResponse', 'errors',
-      $builder->callback(function (BlogPostResponse $response) {
+    $registry->addFieldResolver('MolloBlogResponse', 'errors',
+      $builder->callback(function (MolloBlogResponse $response) {
         return $response->getViolations();
       })
     );
 
-    $registry->addFieldResolver('BlogPost', 'id',
+    $registry->addFieldResolver('MolloBlog', 'id',
       $builder->produce('entity_id')
         ->map('entity', $builder->fromParent())
     );
 
-    $registry->addFieldResolver('BlogPost', 'title',
+    $registry->addFieldResolver('MolloBlog', 'title',
       $builder->compose(
         $builder->produce('entity_label')
           ->map('entity', $builder->fromParent())
       )
     );
 
-    $registry->addFieldResolver('BlogPost', 'author',
+    $registry->addFieldResolver('MolloBlog', 'author',
       $builder->compose(
         $builder->produce('entity_owner')
           ->map('entity', $builder->fromParent()),
@@ -99,8 +99,8 @@ class BlogPostExtension extends SdlSchemaExtensionPluginBase {
    */
   public static function resolveResponse(ResponseInterface $response): string {
     // Resolve content response.
-    if ($response instanceof BlogPostResponse) {
-      return 'BlogPostResponse';
+    if ($response instanceof MolloBlogResponse) {
+      return 'MolloBlogResponse';
     }
     throw new Exception('Invalid response type.');
   }
