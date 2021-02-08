@@ -7,6 +7,7 @@ use Drupal\graphql\GraphQL\ResolverRegistryInterface;
 use Drupal\graphql\GraphQL\Response\ResponseInterface;
 use Drupal\graphql\Plugin\GraphQL\SchemaExtension\SdlSchemaExtensionPluginBase;
 use Drupal\mollo_blog_graphql\Plugin\GraphQL\Response\MolloBlogResponse;
+use Drupal\mollo_blog_graphql\Plugin\GraphQL\Wrappers\QueryConnectionBlog;
 use Exception;
 
 /**
@@ -75,6 +76,35 @@ class MolloBlogExtension extends SdlSchemaExtensionPluginBase {
         $builder->produce('entity_label')
           ->map('entity', $builder->fromParent())
       )
+    );
+
+    $registry->addFieldResolver('Query', 'mollo_blog',
+      $builder->produce('entity_load')
+        ->map('type', $builder->fromValue('node'))
+        ->map('bundles', $builder->fromValue(['mollo_blog']))
+        ->map('id', $builder->fromArgument('id'))
+    );
+
+    $registry->addFieldResolver('Query', 'mollo_blog',
+      $builder->produce('query_mollo_blog')
+        ->map('offset', $builder->fromArgument('offset'))
+        ->map('limit', $builder->fromArgument('limit'))
+    );
+
+    // ------------------------------------------------
+    //      MolloBlogConnection
+    // ------------------------------------------------
+    $registry->addFieldResolver('MolloBlogConnection', 'total',
+      $builder->callback(function (QueryConnectionBlog $connection) {
+        return $connection->total();
+      })
+    );
+
+    $registry->addFieldResolver('MolloBlogConnection', 'items',
+      $builder->callback(function (QueryConnectionBlog $connection) {
+        dpm('items');
+        return $connection->items();
+      })
     );
 
 

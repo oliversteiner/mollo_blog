@@ -17,9 +17,6 @@ type MolloBlogConnection {
   items: [MolloBlog!]
 }
 
-
-
-
 type MolloBlogResponse implements Response {
   errors: [Violation]
   mollo_blog: MolloBlog
