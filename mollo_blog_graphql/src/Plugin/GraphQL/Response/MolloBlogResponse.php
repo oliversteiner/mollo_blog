@@ -20,11 +20,11 @@ class MolloBlogResponse extends Response {
   /**
    * Sets the content.
    *
-   * @param \Drupal\Core\Entity\EntityInterface|null $entity
+   * @param \Drupal\Core\Entity\EntityInterface|null $mollo_blog
    *   The mollo_blog to be served.
    */
-  public function setMolloBlog(?EntityInterface $entity): void {
-    $this->mollo_blog = $entity;
+  public function setMolloBlog(?EntityInterface $mollo_blog): void {
+    $this->mollo_blog = $mollo_blog;
   }
 
   /**

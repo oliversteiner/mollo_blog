@@ -18,6 +18,8 @@ type MolloBlogConnection {
 }
 
 
+
+
 type MolloBlogResponse implements Response {
   errors: [Violation]
   mollo_blog: MolloBlog
